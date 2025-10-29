@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, and, gte, lt } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, produtos, movimentacoes, InsertProduto, InsertMovimentacao } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,96 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Funcoes para Produtos
+export async function createProduto(data: InsertProduto) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.insert(produtos).values(data);
+  return result;
+}
+
+export async function getProdutoById(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.select().from(produtos).where(eq(produtos.id, id)).limit(1);
+  return result.length > 0 ? result[0] : null;
+}
+
+export async function getProdutoBySku(sku: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.select().from(produtos).where(eq(produtos.sku, sku)).limit(1);
+  return result.length > 0 ? result[0] : null;
+}
+
+export async function listProdutos() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return await db.select().from(produtos);
+}
+
+export async function updateProduto(id: number, data: Partial<InsertProduto>) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return await db.update(produtos).set(data).where(eq(produtos.id, id));
+}
+
+// Funcoes para Movimentacoes
+export async function createMovimentacao(data: InsertMovimentacao) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return await db.insert(movimentacoes).values(data);
+}
+
+export async function getMovimentacoesByProdutoId(produtoId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return await db.select().from(movimentacoes).where(eq(movimentacoes.produtoId, produtoId));
+}
+
+export async function listMovimentacoes() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return await db.select().from(movimentacoes);
+}
+
+// Funcoes para Relatorios
+export async function getProdutosAbaixoDoEstoqueMinimo() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return await db.select().from(produtos).where(
+    lt(produtos.quantidadeAtual, produtos.quantidadeMinima)
+  );
+}
+
+export async function getProdutosVencendoEm7Dias() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const hoje = new Date();
+  const em7Dias = new Date(hoje.getTime() + 7 * 24 * 60 * 60 * 1000);
+  
+  return await db.select().from(movimentacoes).where(
+    and(
+      gte(movimentacoes.dataValidade, hoje),
+      lt(movimentacoes.dataValidade, em7Dias)
+    )
+  );
+}
+
+export async function calcularValorTotalEstoque() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.select().from(produtos);
+  return result.reduce((total, p) => total + (p.quantidadeAtual * p.precoUnitario), 0);
+}
