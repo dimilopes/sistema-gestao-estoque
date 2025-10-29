@@ -1,7 +1,7 @@
 # Sistema de Gestão de Estoque
 
 
-Dimitris Tzirnazoglou Assis Lopes - RM: 550120 
+Dimitris Tzirnazoglou Assis Lopes - RM: 550120 /
 Joao Vitor Nava - RM: 98623
 
 
