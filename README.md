@@ -1,5 +1,10 @@
 # Sistema de Gestão de Estoque
 
+
+Dimitris Tzirnazoglou Assis Lopes - RM: 550120 
+Joao Vitor Nava - RM: 98623
+
+
 Um sistema completo para gerenciamento de estoque de produtos perecíveis e não-perecíveis, com controle de lotes, datas de validade e alertas automáticos.
 
 ## Descrição das Regras de Negócio Implementadas
