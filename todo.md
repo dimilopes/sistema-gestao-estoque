@@ -31,11 +31,11 @@
 - [x] Implementar tratamento de excecoes personalizadas
 - [x] Commit: "Etapa 3 - Validacoes e tratamento de erros"
 
-## Etapa 4 - Documentação e Entrega
-- [ ] Atualizar README.md com descrição das regras de negócio
-- [ ] Adicionar diagrama simples das entidades no README
-- [ ] Adicionar exemplos de requisições API no README
-- [ ] Adicionar instruções de como executar o projeto
-- [ ] Verificar se todos os comprovantes estão no repositório
-- [ ] Criar tag "versao-final"
-- [ ] Commit final com documentação
+## Etapa 4 - Documentacao e Entrega
+- [x] Atualizar README.md com descricao das regras de negocio
+- [x] Adicionar diagrama simples das entidades no README
+- [x] Adicionar exemplos de requisicoes API no README
+- [x] Adicionar instrucoes de como executar o projeto
+- [x] Verificar se todos os comprovantes estao no repositorio
+- [x] Criar tag "versao-final"
+- [x] Commit final com documentacao
