@@ -1,25 +1,25 @@
 # Sistema de Gestão de Estoque - TODO
 
 ## Etapa 1 - Modelagem do Domínio
-- [ ] Modelar entidade Produto (SKU, Nome, Categoria, Preço, Quantidade Mínima, Data de Criação)
-- [ ] Modelar entidade Movimentação de Estoque (Tipo, Quantidade, Data, Lote, Data de Validade)
-- [ ] Configurar banco de dados (H2 em memória ou similar)
-- [ ] Criar estrutura inicial do projeto
-- [ ] Commit: "Etapa 1 - Modelagem do domínio"
+- [x] Modelar entidade Produto (SKU, Nome, Categoria, Preço, Quantidade Mínima, Data de Criação)
+- [x] Modelar entidade Movimentação de Estoque (Tipo, Quantidade, Data, Lote, Data de Validade)
+- [x] Configurar banco de dados (H2 em memória ou similar)
+- [x] Criar estrutura inicial do projeto
+- [x] Commit: "Etapa 1 - Modelagem do domínio"
 
-## Etapa 2 - Implementação das Regras de Negócio
-- [ ] Serviço de Produto: Validação de categoria vs dados obrigatórios
-- [ ] Serviço de Produto: Método para verificar produtos abaixo do estoque mínimo
-- [ ] Serviço de Produto: Cadastro completo de produtos
-- [ ] Serviço de Movimentação: Validar quantidade positiva
-- [ ] Serviço de Movimentação: Verificar estoque suficiente para saídas
-- [ ] Serviço de Movimentação: Atualizar saldo do produto automaticamente
-- [ ] Serviço de Movimentação: Validar data de validade para perecíveis
-- [ ] Serviço de Movimentação: Implementar entrada e saída de estoque
-- [ ] Serviço de Relatórios: Calcular valor total do estoque
-- [ ] Serviço de Relatórios: Listar produtos que vencerão em até 7 dias
-- [ ] Serviço de Relatórios: Identificar produtos com estoque abaixo do mínimo
-- [ ] Commit: "Etapa 2 - Implementação das regras de negócio"
+## Etapa 2 - Implementacao das Regras de Negocio
+- [x] Servico de Produto: Validacao de categoria vs dados obrigatorios
+- [x] Servico de Produto: Metodo para verificar produtos abaixo do estoque minimo
+- [x] Servico de Produto: Cadastro completo de produtos
+- [x] Servico de Movimentacao: Validar quantidade positiva
+- [x] Servico de Movimentacao: Verificar estoque suficiente para saidas
+- [x] Servico de Movimentacao: Atualizar saldo do produto automaticamente
+- [x] Servico de Movimentacao: Validar data de validade para pereciveis
+- [x] Servico de Movimentacao: Implementar entrada e saida de estoque
+- [x] Servico de Relatorios: Calcular valor total do estoque
+- [x] Servico de Relatorios: Listar produtos que vencerao em ate 7 dias
+- [x] Servico de Relatorios: Identificar produtos com estoque abaixo do minimo
+- [x] Commit: "Etapa 2 - Implementacao das regras de negocio"
 
 ## Etapa 3 - Validações e Tratamento de Erros
 - [ ] Validação: Tentativa de cadastrar produto perecível sem data de validade
