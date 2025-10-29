@@ -21,15 +21,15 @@
 - [x] Servico de Relatorios: Identificar produtos com estoque abaixo do minimo
 - [x] Commit: "Etapa 2 - Implementacao das regras de negocio"
 
-## Etapa 3 - Validações e Tratamento de Erros
-- [ ] Validação: Tentativa de cadastrar produto perecível sem data de validade
-- [ ] Validação: Tentativa de saída com quantidade maior que estoque disponível
-- [ ] Validação: Movimentação com quantidade negativa
-- [ ] Validação: Produto perecível não pode ter movimentação após data de validade
-- [ ] Validação: Alertas de estoque mínimo funcionando corretamente
-- [ ] Validação: Cálculo correto do saldo após movimentações
-- [ ] Implementar tratamento de exceções personalizadas
-- [ ] Commit: "Etapa 3 - Validações e tratamento de erros"
+## Etapa 3 - Validacoes e Tratamento de Erros
+- [x] Validacao: Tentativa de cadastrar produto perecivel sem data de validade
+- [x] Validacao: Tentativa de saida com quantidade maior que estoque disponivel
+- [x] Validacao: Movimentacao com quantidade negativa
+- [x] Validacao: Produto perecivel nao pode ter movimentacao apos data de validade
+- [x] Validacao: Alertas de estoque minimo funcionando corretamente
+- [x] Validacao: Calculo correto do saldo apos movimentacoes
+- [x] Implementar tratamento de excecoes personalizadas
+- [x] Commit: "Etapa 3 - Validacoes e tratamento de erros"
 
 ## Etapa 4 - Documentação e Entrega
 - [ ] Atualizar README.md com descrição das regras de negócio
